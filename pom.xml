@@ -53,7 +53,7 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.7</version>
+            <version>2.14.0</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -195,7 +195,7 @@
                         </goals>
                         <configuration>
                             <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <manifestEntries>
                                         <Main-Class>com.appdynamics.extensions.workbench.WorkbenchServerLauncher</Main-Class>
@@ -222,15 +222,15 @@
                         <phase>install</phase>
                         <configuration>
                             <target>
-                                <property name="maven.repo.dir" value="${project.basedir}/../maven-repo/releases/com/appdynamics/${project.artifactId}/${project.version}" />
-                                <mkdir dir="${maven.repo.dir}" />
+                                <property name="maven.repo.dir" value="${project.basedir}/../maven-repo/releases/com/appdynamics/${project.artifactId}/${project.version}"/>
+                                <mkdir dir="${maven.repo.dir}"/>
                                 <copy todir="${maven.repo.dir}">
-                                    <fileset dir="target" includes="*.jar" />
-                                    <fileset dir="${project.basedir}" includes="LICENSE.txt" />
-                                    <fileset dir="${project.basedir}" includes="NOTICE.txt" />
+                                    <fileset dir="target" includes="*.jar"/>
+                                    <fileset dir="${project.basedir}" includes="LICENSE.txt"/>
+                                    <fileset dir="${project.basedir}" includes="NOTICE.txt"/>
                                 </copy>
-                                <copy tofile="${maven.repo.dir}/${project.artifactId}-${project.version}.pom" file="pom.xml" />
-                                <copy todir="${project.basedir}/../maven-repo/releases/com/appdynamics/${project.artifactId}" file="${settings.localRepository}/com/appdynamics/${project.artifactId}/maven-metadata-local.xml" />
+                                <copy tofile="${maven.repo.dir}/${project.artifactId}-${project.version}.pom" file="pom.xml"/>
+                                <copy todir="${project.basedir}/../maven-repo/releases/com/appdynamics/${project.artifactId}" file="${settings.localRepository}/com/appdynamics/${project.artifactId}/maven-metadata-local.xml"/>
                             </target>
                         </configuration>
                         <goals>
@@ -242,15 +242,15 @@
                         <phase>deploy</phase>
                         <configuration>
                             <target>
-                                <property name="maven.repo.dir" value="../../../maven-repo/releases/com/appdynamics/${project.artifactId}/${project.version}" />
-                                <mkdir dir="${maven.repo.dir}" />
+                                <property name="maven.repo.dir" value="../../../maven-repo/releases/com/appdynamics/${project.artifactId}/${project.version}"/>
+                                <mkdir dir="${maven.repo.dir}"/>
                                 <copy todir="${maven.repo.dir}">
-                                    <fileset dir="target" includes="*.jar" />
-                                    <fileset dir="${project.basedir}" includes="LICENSE.txt" />
-                                    <fileset dir="${project.basedir}" includes="NOTICE.txt" />
+                                    <fileset dir="target" includes="*.jar"/>
+                                    <fileset dir="${project.basedir}" includes="LICENSE.txt"/>
+                                    <fileset dir="${project.basedir}" includes="NOTICE.txt"/>
                                 </copy>
-                                <copy tofile="${maven.repo.dir}/${project.artifactId}-${project.version}.pom" file="pom.xml" />
-                                <copy todir="../../../maven-repo/releases/com/appdynamics/${project.artifactId}" file="${settings.localRepository}/com/appdynamics/${project.artifactId}/maven-metadata-local.xml" />
+                                <copy tofile="${maven.repo.dir}/${project.artifactId}-${project.version}.pom" file="pom.xml"/>
+                                <copy todir="../../../maven-repo/releases/com/appdynamics/${project.artifactId}" file="${settings.localRepository}/com/appdynamics/${project.artifactId}/maven-metadata-local.xml"/>
                             </target>
                         </configuration>
                         <goals>
